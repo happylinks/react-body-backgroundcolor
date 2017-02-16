@@ -5,19 +5,19 @@ var React = require('react'),
 
 function reducePropsToState(propsList) {
   return propsList.map(function(props) {
-    return props.className;
+    return props.backgroundColor;
   }).filter(function (value, index, self) {
     return self.indexOf(value) === index;
   }).join(' ');
 }
 
-function handleStateChangeOnClient(stringClassNames) {
-  document.body.className = stringClassNames || '';
+function handleStateChangeOnClient(stringBackgroundColor) {
+  document.body.style.backgroundColor = stringBackgroundColor || '';
 }
 
 var DocumentTitle = React.createClass({
   propTypes: {
-    className: React.PropTypes.string.isRequired
+    backgroundColor: React.PropTypes.string.isRequired
   },
 
   render: function render() {

@@ -1,7 +1,7 @@
 {
-  "name": "react-body-classname",
+  "name": "react-body-backgroundcolor",
   "version": "1.0.1",
-  "description": "A declarative, nested way to manipulate your body's className",
+  "description": "A declarative, nested way to manipulate your body's backgroundcolor",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
@@ -10,22 +10,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/PactCoffee/react-body-classname"
+    "url": "https://github.com/happylinks/react-body-backgroundcolor"
   },
   "keywords": [
     "react",
     "component",
     "react-component",
-    "body.className",
+    "body.backgroundcolor",
     "title",
     "jsx"
   ],
-  "author": "Iestyn Williams <iest@me.com> (http://github.com/iest)",
+  "author": "Michiel Westerbeek <happylinks@gmail.com> (http://github.com/happylinks)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PactCoffee/react-body-classname/issues"
+    "url": "https://github.com/happylinks/react-body-backgroundcolor/issues"
   },
-  "homepage": "https://github.com/PactCoffee/react-body-classname",
+  "homepage": "https://github.com/happylinks/react-body-backgroundcolor",
   "devDependencies": {
     "expect.js": "^0.3.1",
     "global": "^4.3.0",

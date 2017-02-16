@@ -3,9 +3,9 @@
 'use strict';
 var expect = require('expect.js'),
     React = require('react'),
-    BodyClassName = require('../');
+    BodyBackgroundColor = require('../');
 
-describe('BodyClassName (in a browser)', function () {
+describe('BodyBackgroundColor (in a browser)', function () {
   afterEach(function () {
     React.unmountComponentAtNode(global.document.body);
   });
@@ -17,7 +17,7 @@ describe('BodyClassName (in a browser)', function () {
     global.window.location = {};
     global.window.navigator = {userAgent: 'Chrome'};
     console.debug = console.log;
-    BodyClassName.canUseDOM = true;
+    BodyBackgroundColor.canUseDOM = true;
   });
   after(function () {
     delete global.window;
@@ -25,46 +25,17 @@ describe('BodyClassName (in a browser)', function () {
     delete console.debug;
   });
 
-  it('changes the document body class name on mount', function (done) {
-    var className = 'hello world';
+  it('changes the document body backgroundcolor on mount', function (done) {
+    var backgroundColor = '#aabbcc';
     var Component = React.createClass({
       componentDidMount: function () {
-        expect(global.document.body.className).to.equal(className);
+        expect(global.document.body.style.backgroundColor).to.equal(backgroundColor);
         done();
       },
       render: function () {
-        return React.createElement(BodyClassName, {className: className});
+        return React.createElement(BodyBackgroundColor, {backgroundColor: backgroundColor});
       }
     });
     React.render(React.createElement(Component), global.document.body);
-  });
-
-  it('supports nesting, gathering all classNames used', function (done) {
-    var called = false;
-    var firstName = 'hello world';
-    var Component1 = React.createClass({
-      componentDidMount: function () {
-        setTimeout(function () {
-          expect(called).to.be(true);
-          expect(global.document.body.className).to.equal(firstName + ' ' + secondName);
-          done();
-        });
-      },
-      render: function () {
-        return React.createElement(BodyClassName, {className: firstName});
-      }
-    });
-    var secondName = 'foo bar';
-    var Component2 = React.createClass({
-      componentDidMount: function () {
-        called = true;
-      },
-      render: function () {
-        return React.createElement(BodyClassName, {className: secondName},
-          React.DOM.div(null, React.createElement(Component1))
-        );
-      }
-    });
-    React.render(React.createElement(Component2), global.document.body);
   });
 });
