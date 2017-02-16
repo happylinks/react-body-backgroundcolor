@@ -1,6 +1,6 @@
 {
   "name": "react-body-backgroundcolor",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "A declarative, nested way to manipulate your body's backgroundcolor",
   "main": "index.js",
   "scripts": {
