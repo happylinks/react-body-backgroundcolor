@@ -1,7 +1,8 @@
 {
   "name": "react-body-backgroundcolor",
-  "version": "1.0.1",
-  "description": "A declarative, nested way to manipulate your body's backgroundcolor",
+  "version": "1.1.1",
+  "description":
+    "A declarative, nested way to manipulate your body's backgroundcolor",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
@@ -20,7 +21,8 @@
     "title",
     "jsx"
   ],
-  "author": "Michiel Westerbeek <happylinks@gmail.com> (http://github.com/happylinks)",
+  "author":
+    "Michiel Westerbeek <happylinks@gmail.com> (http://github.com/happylinks)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/happylinks/react-body-backgroundcolor/issues"
@@ -34,6 +36,7 @@
     "react": "^0.13.0"
   },
   "dependencies": {
-    "react-side-effect": "^1.0.0"
+    "react-side-effect": "^1.0.0",
+    "prop-types": "^15.5.6"
   }
 }

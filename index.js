@@ -1,14 +1,18 @@
 'use strict';
 
 var React = require('react'),
-  withSideEffect = require('react-side-effect');
+  withSideEffect = require('react-side-effect'),
+  PropTypes = require('prop-types');
 
 function reducePropsToState(propsList) {
-  return propsList.map(function(props) {
-    return props.backgroundColor;
-  }).filter(function (value, index, self) {
-    return self.indexOf(value) === index;
-  }).join(' ');
+  return propsList
+    .map(function(props) {
+      return props.backgroundColor;
+    })
+    .filter(function(value, index, self) {
+      return self.indexOf(value) === index;
+    })
+    .join(' ');
 }
 
 function handleStateChangeOnClient(stringBackgroundColor) {
@@ -17,7 +21,7 @@ function handleStateChangeOnClient(stringBackgroundColor) {
 
 var DocumentTitle = React.createClass({
   propTypes: {
-    backgroundColor: React.PropTypes.string.isRequired
+    backgroundColor: PropTypes.string.isRequired,
   },
 
   render: function render() {
@@ -26,10 +30,9 @@ var DocumentTitle = React.createClass({
     } else {
       return null;
     }
-  }
+  },
 });
 
-module.exports = withSideEffect(
-  reducePropsToState,
-  handleStateChangeOnClient
-)(DocumentTitle);
+module.exports = withSideEffect(reducePropsToState, handleStateChangeOnClient)(
+  DocumentTitle,
+);
