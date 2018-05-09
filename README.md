@@ -1,3 +1,6 @@
+## Deprecated, would not use anymore.
+Replaced by just calling document.body.style.backgroundColor directly where needed.
+
 React Body Backgroundcolor
 ====================
 
